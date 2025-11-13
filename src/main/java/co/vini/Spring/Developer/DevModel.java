@@ -16,9 +16,14 @@ public class DevModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
+    @Column(unique = true)
     private String email;
+
     private String role;
+
     @ManyToOne//many tasks to one developer
     @JoinColumn(name = "tasks_id") //Foreign key
     private TaskModel tasks;

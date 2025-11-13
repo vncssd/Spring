@@ -19,9 +19,12 @@ public class TaskModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String level;
+
     @OneToMany(mappedBy = "tasks") //one task to many devs
     private List<DevModel> developer;
-    
+
 }
